@@ -53,13 +53,16 @@ runs:
       shell: bash
       run: mkdir -p RenderedDocumentation/Result/project/0.0.0
 
-    - uses: TYPO3-Documentation/render-guides@main
+    - uses: garvinhicking/render-guides@main
       id: render-guides
       if: steps.enable_guides.outputs.GUIDES == 'true'
       with:
         working-directory: t3docsproject
         config: ./t3docsproject/Documentation/
         output: ./RenderedDocumentation/Result/project/0.0.0
+        configure-branch: ${{ env.source_branch }}
+        configure-project-release: ${{ env.target_branch_directory }}
+        configure-project-version: ${{ env.target_branch_directory }}
 
     - id: jobfile
       if: steps.enable_guides.outputs.GUIDES == 'false'
