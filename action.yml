@@ -1,5 +1,5 @@
-name: 'Render TYPO3 Documentation'
-description: 'Use the up-to-date docker rendering workflow to render TYPO3 rst documentation with Sphinx.'
+name: 'Render TYPO3 Documentation (garvin)'
+description: 'Use the up-to-date docker rendering workflow to render TYPO3 rst documentation with Sphinx or phpDocumentor when guides.xml present.'
 branding:
   icon: 'book-open'
   color: 'orange'
